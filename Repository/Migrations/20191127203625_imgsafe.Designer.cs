@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191126001937_NomeMigracao")]
-    partial class NomeMigracao
+    [Migration("20191127203625_imgsafe")]
+    partial class imgsafe
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,6 +124,41 @@ namespace Repository.Migrations
                     b.ToTable("ItensVenda");
                 });
 
+            modelBuilder.Entity("Domain.Pet", b =>
+                {
+                    b.Property<int>("IdPet")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Castragem");
+
+                    b.Property<int?>("GeneroId");
+
+                    b.Property<int>("Idade");
+
+                    b.Property<string>("Imagem");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Pelagem");
+
+                    b.Property<double>("Peso");
+
+                    b.Property<string>("Porte");
+
+                    b.Property<string>("Raca");
+
+                    b.Property<int?>("clienteIdCliente");
+
+                    b.HasKey("IdPet");
+
+                    b.HasIndex("GeneroId");
+
+                    b.HasIndex("clienteIdCliente");
+
+                    b.ToTable("Pet");
+                });
+
             modelBuilder.Entity("Domain.Produto", b =>
                 {
                     b.Property<int>("ProdutoId")
@@ -189,6 +224,17 @@ namespace Repository.Migrations
                     b.HasOne("Domain.Produto", "Produto")
                         .WithMany()
                         .HasForeignKey("ProdutoId");
+                });
+
+            modelBuilder.Entity("Domain.Pet", b =>
+                {
+                    b.HasOne("Domain.Genero", "Genero")
+                        .WithMany()
+                        .HasForeignKey("GeneroId");
+
+                    b.HasOne("Domain.Cliente", "cliente")
+                        .WithMany()
+                        .HasForeignKey("clienteIdCliente");
                 });
 
             modelBuilder.Entity("Domain.Produto", b =>

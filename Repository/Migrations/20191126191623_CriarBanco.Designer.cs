@@ -10,7 +10,7 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191125235630_CriarBanco")]
+    [Migration("20191126191623_CriarBanco")]
     partial class CriarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,35 @@ namespace Repository.Migrations
                     b.ToTable("Categorias");
                 });
 
+            modelBuilder.Entity("Domain.Cliente", b =>
+                {
+                    b.Property<int>("IdCliente")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Cpf");
+
+                    b.Property<DateTime>("CriadoEm");
+
+                    b.Property<DateTime?>("DataNascimento");
+
+                    b.Property<int?>("GeneroId");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Rg");
+
+                    b.Property<string>("Sobrenome");
+
+                    b.Property<string>("Telefone");
+
+                    b.HasKey("IdCliente");
+
+                    b.HasIndex("GeneroId");
+
+                    b.ToTable("Clientes");
+                });
+
             modelBuilder.Entity("Domain.Endereco", b =>
                 {
                     b.Property<int>("EnderecoId")
@@ -57,6 +86,19 @@ namespace Repository.Migrations
                     b.HasKey("EnderecoId");
 
                     b.ToTable("Enderecos");
+                });
+
+            modelBuilder.Entity("Domain.Genero", b =>
+                {
+                    b.Property<int>("GeneroId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("GeneroId");
+
+                    b.ToTable("Generos");
                 });
 
             modelBuilder.Entity("Domain.ItemVenda", b =>
@@ -133,6 +175,13 @@ namespace Repository.Migrations
                     b.HasIndex("EnderecoId");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("Domain.Cliente", b =>
+                {
+                    b.HasOne("Domain.Genero", "Genero")
+                        .WithMany()
+                        .HasForeignKey("GeneroId");
                 });
 
             modelBuilder.Entity("Domain.ItemVenda", b =>
