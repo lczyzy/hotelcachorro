@@ -205,3 +205,7 @@ C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreap
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Pets\Index.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Pets\Alterar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Pets\Cadastrar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Index.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Alterar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Cadastrar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Remover.g.cshtml.cs

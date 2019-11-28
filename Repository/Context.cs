@@ -20,5 +20,6 @@ namespace Repository
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Pet> Pets { get; set; }
+        public DbSet<Quarto> Quartos { get; set; }
     }
 }
