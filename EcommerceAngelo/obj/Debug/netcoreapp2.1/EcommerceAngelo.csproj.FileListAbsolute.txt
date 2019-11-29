@@ -209,3 +209,8 @@ C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreap
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Alterar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Cadastrar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Remover.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Details.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Index.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Alterar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Cadastrar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Remover.g.cshtml.cs

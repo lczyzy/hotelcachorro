@@ -71,6 +71,7 @@ namespace EcommerceAngelo.Controllers
             ViewBag.DataHora = DateTime.Now;
             return View(_produtoDAO.ListarTodos());
         }
+
         [HttpGet]
         public IActionResult Cadastrar()
         {

@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191127203625_imgsafe")]
-    partial class imgsafe
+    [Migration("20191129190452_NomeMigracao")]
+    partial class NomeMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -191,6 +191,40 @@ namespace Repository.Migrations
                     b.ToTable("Produtos");
                 });
 
+            modelBuilder.Entity("Domain.Quarto", b =>
+                {
+                    b.Property<int>("IdQuarto")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NomeQuarto");
+
+                    b.Property<double>("PrecoQuarto");
+
+                    b.HasKey("IdQuarto");
+
+                    b.ToTable("Quartos");
+                });
+
+            modelBuilder.Entity("Domain.Servico", b =>
+                {
+                    b.Property<int>("IdServico")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoriaId");
+
+                    b.Property<string>("NomeServico");
+
+                    b.Property<double>("PrecoServico");
+
+                    b.HasKey("IdServico");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.ToTable("Servicos");
+                });
+
             modelBuilder.Entity("Domain.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
@@ -238,6 +272,13 @@ namespace Repository.Migrations
                 });
 
             modelBuilder.Entity("Domain.Produto", b =>
+                {
+                    b.HasOne("Domain.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
+                });
+
+            modelBuilder.Entity("Domain.Servico", b =>
                 {
                     b.HasOne("Domain.Categoria", "Categoria")
                         .WithMany()

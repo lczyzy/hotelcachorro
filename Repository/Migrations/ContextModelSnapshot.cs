@@ -204,6 +204,25 @@ namespace Repository.Migrations
                     b.ToTable("Quartos");
                 });
 
+            modelBuilder.Entity("Domain.Servico", b =>
+                {
+                    b.Property<int>("IdServico")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoriaId");
+
+                    b.Property<string>("NomeServico");
+
+                    b.Property<double>("PrecoServico");
+
+                    b.HasKey("IdServico");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.ToTable("Servicos");
+                });
+
             modelBuilder.Entity("Domain.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
@@ -251,6 +270,13 @@ namespace Repository.Migrations
                 });
 
             modelBuilder.Entity("Domain.Produto", b =>
+                {
+                    b.HasOne("Domain.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId");
+                });
+
+            modelBuilder.Entity("Domain.Servico", b =>
                 {
                     b.HasOne("Domain.Categoria", "Categoria")
                         .WithMany()
