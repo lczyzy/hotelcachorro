@@ -14,6 +14,8 @@ namespace Domain
 
         public string Sobrenome { get; set; }
 
+        public Endend Endend { get; set;}
+
     }
 
 }

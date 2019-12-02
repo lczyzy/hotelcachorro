@@ -10,6 +10,7 @@ using Repository;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System.Net;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -83,5 +84,38 @@ namespace EcommerceAngelo.Controllers
             _clienteDAO.Alterar(c);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult BuscarCep(Cliente c)
+        {
+           
+            var correios = new ServiceReference1.AtendeClienteClient();
+
+            var consulta = correios.consultaCEPAsync(c.Endend.Codigo).Result;
+
+            if (consulta != null)
+            {
+
+                WebClient client = new WebClient();
+                TempData["Usuario"] = consulta;
+
+                ViewBag.Endend = new Endend()
+                {
+                    Descricao = consulta.@return.end,
+                    Complemento = consulta.@return.complemento2,
+                    Bairro = consulta.@return.bairro,
+                    Cidade = consulta.@return.cidade,
+                    UF = consulta.@return.uf
+                };
+
+                return RedirectToAction(nameof(Cadastrar));
+            }
+
+            ModelState.AddModelError
+                    ("", "BuscarCep inválido!");
+            return View();
+        }
+
+
     }
 }

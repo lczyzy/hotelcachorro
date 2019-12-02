@@ -181,7 +181,6 @@ C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreap
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Categoria\Index.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Cadastrar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Delete.g.cshtml.cs
-C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Home\CarrinhoCompras.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Detalhes.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -214,3 +213,8 @@ C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreap
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Alterar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Cadastrar.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Remover.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\CepTeste.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Teste.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Produto\Teste.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Produto\View.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs

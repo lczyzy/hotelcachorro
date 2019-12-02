@@ -22,5 +22,6 @@ namespace Repository
         public DbSet<Pet> Pets { get; set; }
         public DbSet<Quarto> Quartos { get; set; }
         public DbSet<Servico> Servicos { get; set; }
+        public DbSet<Endend> Endends { get; set; }
     }
 }

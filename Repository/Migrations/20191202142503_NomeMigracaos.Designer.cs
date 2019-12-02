@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191129190452_NomeMigracao")]
-    partial class NomeMigracao
+    [Migration("20191202142503_NomeMigracaos")]
+    partial class NomeMigracaos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,6 +48,8 @@ namespace Repository.Migrations
 
                     b.Property<DateTime?>("DataNascimento");
 
+                    b.Property<string>("EndendCodigo");
+
                     b.Property<int?>("GeneroId");
 
                     b.Property<string>("Nome");
@@ -60,9 +62,31 @@ namespace Repository.Migrations
 
                     b.HasKey("IdCliente");
 
+                    b.HasIndex("EndendCodigo");
+
                     b.HasIndex("GeneroId");
 
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("Domain.Endend", b =>
+                {
+                    b.Property<string>("Codigo")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Bairro");
+
+                    b.Property<string>("Cidade");
+
+                    b.Property<string>("Complemento");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("UF");
+
+                    b.HasKey("Codigo");
+
+                    b.ToTable("Endend");
                 });
 
             modelBuilder.Entity("Domain.Endereco", b =>
@@ -248,6 +272,10 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Domain.Cliente", b =>
                 {
+                    b.HasOne("Domain.Endend", "Endend")
+                        .WithMany()
+                        .HasForeignKey("EndendCodigo");
+
                     b.HasOne("Domain.Genero", "Genero")
                         .WithMany()
                         .HasForeignKey("GeneroId");

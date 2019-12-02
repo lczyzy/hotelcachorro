@@ -66,6 +66,49 @@
     </div>
 </div>
 
+<h2>CepTeste</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        <div class="input-group">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Endend.Codigo, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <input type="submit"
+                       class="btn btn-info"
+                       value="Buscarrr"
+                       asp-action="BuscarCep"
+                       asp-controller="Cliente" />
+            </span>
+        </div>
+    </div>
+    <br />
+    <div>
+        @Html.ValidationMessageFor(m => m.Endend.Codigo, "", new { @class = "text-danger" })
+    </div>
+}
+
+    <div class="form-group" id="Rua">
+        <label asp-for="Endend.Descricao"></label>
+        <input type="text" class="form-control"
+               asp-for="Endend.Descricao" readonly="" />
+        <span asp-validation-for="Endend.Descricao"
+              class="text-primary"></span>
+    </div>
+
+
+@{
+    if (ViewBag.Endereco != null)
+    {
+        @ViewBag.Endereco.Descricao @ViewBag.Endereco.Complemento
+        <br />
+        @ViewBag.Endereco.Bairro<br />
+        @ViewBag.Endereco.Cidade<br />
+        @ViewBag.Endereco.UF<br />
+    }
+}
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

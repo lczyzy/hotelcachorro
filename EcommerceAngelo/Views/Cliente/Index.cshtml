@@ -1,80 +1,28 @@
-﻿@model IEnumerable<Domain.Cliente>
+﻿@model List<Cliente>
 
 @{
-    ViewData["Title"] = "Index";
+    DateTime dataHora = ViewBag.DataHora;
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Cadastrar">Create New</a>
-</p>
-<table class="table">
+<h2>Gerenciamento dos Clientes</h2>
+<a asp-action="Cadastrar" class="btn btn-info">Cadastrar Cliente</a>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Sobrenome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Genero.Nome)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Cpf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CriadoEm)
-            </th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Imagem</th>
+            <th>Criado em</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero.Nome)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Cpf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CriadoEm)
-            </td>
-            <td>
-                <a asp-action="Alterar" asp-route-id="@item.IdCliente">Edit</a> |
-                <a asp-action="Remover" asp-route-id="@item.IdCliente">Delete</a>
-            </td>
-        </tr>
-}
+        
     </tbody>
 </table>
+<b>Dados atualizados em: </b> @dataHora
