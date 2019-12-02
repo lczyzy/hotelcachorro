@@ -1,0 +1,14 @@
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.deps.json
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.runtimeconfig.json
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.runtimeconfig.dev.json
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.dll
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.csprojAssemblyReference.cache
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.csproj.CoreCompileInputs.cache
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorAssemblyInfo.cache
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorAssemblyInfo.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.AssemblyInfoInputs.cache
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.AssemblyInfo.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorTargetAssemblyInfo.cache
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.pdb
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.dll
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.pdb

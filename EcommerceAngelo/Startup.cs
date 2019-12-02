@@ -41,6 +41,7 @@ namespace EcommerceAngelo
             services.AddScoped<UsuarioDAO>();
             services.AddScoped<ServicoDAO>();
             services.AddScoped<QuartoDAO>();
+            services.AddScoped<ReservaDAO>();
 
             services.AddScoped<CategoriaDAO>();
             services.AddScoped<ItemVendaDAO>();

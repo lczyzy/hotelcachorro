@@ -1,4 +1,5 @@
 ﻿using Domain;
+using HotelCachorro.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,5 +24,6 @@ namespace Repository
         public DbSet<Quarto> Quartos { get; set; }
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Endend> Endends { get; set; }
+        public DbSet<Reserva> Reservas { get; set; }
     }
 }

@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Domain
+namespace HotelCachorro.Model
 {
-
     [Table("Reservas")]
     public class Reserva
     {
-
         [Key]
         public int IdReserva { get; set; }
         public Pet Pet { get; set; }

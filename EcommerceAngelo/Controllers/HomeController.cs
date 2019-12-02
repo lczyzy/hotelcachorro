@@ -44,6 +44,8 @@ namespace EcommerceAngelo.Controllers
             _itemVendaDAO.Remover(id);
             return RedirectToAction("CarrinhoCompras");
         }
+
+        /*
         public IActionResult CarrinhoCompras()
         {
             ViewBag.TotalCarrinho = _itemVendaDAO.
@@ -53,6 +55,7 @@ namespace EcommerceAngelo.Controllers
                 ListarItensPorCarrinhoId
                 (_utilsSession.RetornarCarrinhoId()));
         }
+        */
         public IActionResult AumentarQuantidade(int id)
         {
             _itemVendaDAO.AumentarQuantidade(id);
@@ -63,20 +66,6 @@ namespace EcommerceAngelo.Controllers
             _itemVendaDAO.DiminuirQuantidade(id);
             return RedirectToAction("CarrinhoCompras");
         }
-        public IActionResult AdicionarAoCarrinho(int id)
-        {
-            //Adicionar os produtos dentro do carrinho
-            Produto p = _produtoDAO.BuscarPorId(id);
-            ItemVenda i = new ItemVenda
-            {
-                Produto = p,
-                Quantidade = 1,
-                Preco = p.Preco.Value,
-                CarrinhoId = _utilsSession.RetornarCarrinhoId()
-            };
-            //Gravar o objeto na tabela
-            _itemVendaDAO.Cadastrar(i);
-            return RedirectToAction("CarrinhoCompras");
-        }
+    
     }
 }

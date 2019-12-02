@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191202142503_NomeMigracaos")]
-    partial class NomeMigracaos
+    [Migration("20191202185102_CriarBanco")]
+    partial class CriarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -127,25 +127,27 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Domain.ItemVenda", b =>
                 {
-                    b.Property<int>("ItemVendaId")
+                    b.Property<int>("IdVendaId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CarrinhoId");
-
-                    b.Property<DateTime>("CriadoEm");
+                    b.Property<string>("Nome");
 
                     b.Property<double>("Preco");
 
-                    b.Property<int?>("ProdutoId");
-
                     b.Property<int>("Quantidade");
 
-                    b.HasKey("ItemVendaId");
+                    b.Property<int?>("ReservaIdReserva");
 
-                    b.HasIndex("ProdutoId");
+                    b.Property<int?>("ServicoIdServico");
 
-                    b.ToTable("ItensVenda");
+                    b.HasKey("IdVendaId");
+
+                    b.HasIndex("ReservaIdReserva");
+
+                    b.HasIndex("ServicoIdServico");
+
+                    b.ToTable("ItensVendas");
                 });
 
             modelBuilder.Entity("Domain.Pet", b =>
@@ -270,6 +272,31 @@ namespace Repository.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("HotelCachorro.Model.Reserva", b =>
+                {
+                    b.Property<int>("IdReserva")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DataEntrada");
+
+                    b.Property<DateTime>("DataSaida");
+
+                    b.Property<int?>("PetIdPet");
+
+                    b.Property<int?>("QuartoIdQuarto");
+
+                    b.Property<double>("ValorTotal");
+
+                    b.HasKey("IdReserva");
+
+                    b.HasIndex("PetIdPet");
+
+                    b.HasIndex("QuartoIdQuarto");
+
+                    b.ToTable("Reservas");
+                });
+
             modelBuilder.Entity("Domain.Cliente", b =>
                 {
                     b.HasOne("Domain.Endend", "Endend")
@@ -283,9 +310,13 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Domain.ItemVenda", b =>
                 {
-                    b.HasOne("Domain.Produto", "Produto")
+                    b.HasOne("HotelCachorro.Model.Reserva", "Reserva")
+                        .WithMany("ItensVendidos")
+                        .HasForeignKey("ReservaIdReserva");
+
+                    b.HasOne("Domain.Servico", "Servico")
                         .WithMany()
-                        .HasForeignKey("ProdutoId");
+                        .HasForeignKey("ServicoIdServico");
                 });
 
             modelBuilder.Entity("Domain.Pet", b =>
@@ -318,6 +349,17 @@ namespace Repository.Migrations
                     b.HasOne("Domain.Endereco", "Endereco")
                         .WithMany()
                         .HasForeignKey("EnderecoId");
+                });
+
+            modelBuilder.Entity("HotelCachorro.Model.Reserva", b =>
+                {
+                    b.HasOne("Domain.Pet", "Pet")
+                        .WithMany()
+                        .HasForeignKey("PetIdPet");
+
+                    b.HasOne("Domain.Quarto", "Quarto")
+                        .WithMany()
+                        .HasForeignKey("QuartoIdQuarto");
                 });
 #pragma warning restore 612, 618
         }

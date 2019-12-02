@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelCachorro.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,7 +13,7 @@ namespace Domain
     {
         
         [Key]
-        public int IdVenda { get; set; }
+        public int IdVendaId { get; set; }
 
         public Servico Servico { get; set; }
         public string Nome { get; set; }

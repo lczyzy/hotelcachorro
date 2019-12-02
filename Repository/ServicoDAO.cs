@@ -1,4 +1,5 @@
 ﻿using Domain;
+using HotelCachorro.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,11 @@ namespace Repository
         }
 
 
+        /*
+        public List<ItemVenda> ProdutosPorCliente(Reserva r)
+        {
+            return _context.ItensVenda.Where(x => x.Reserva.IdReserva == r.IdReserva).ToList();
+        }*/
 
     }
 }

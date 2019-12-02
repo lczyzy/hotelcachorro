@@ -34,6 +34,8 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
 
+            
+
             if (ModelState.IsValid)
             {
                 

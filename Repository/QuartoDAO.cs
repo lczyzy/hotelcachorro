@@ -102,5 +102,10 @@ namespace Repository
         }
 
 
+        public List<Quarto> ListarTodos()
+        {
+            return _context.Quartos.ToList();
+        }
+
     }
 }
