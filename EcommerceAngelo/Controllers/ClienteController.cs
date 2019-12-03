@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -34,6 +35,7 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
 
+            
             
 
             if (ModelState.IsValid)
@@ -64,7 +66,18 @@ namespace EcommerceAngelo.Controllers
             ViewBag.Generos =
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
-            return View();
+
+
+            Cliente c = new Cliente();
+            if (TempData["Usuario"] != null)
+            {
+                string resultado = TempData["Cliente"].ToString();
+                c.Endend = JsonConvert.DeserializeObject<Endend>(resultado);
+            }
+
+
+
+            return View(c);
         }
 
 
@@ -98,9 +111,12 @@ namespace EcommerceAngelo.Controllers
             if (consulta != null)
             {
 
-                WebClient client = new WebClient();
-                TempData["Usuario"] = consulta;
+                //WebClient client = new WebClient();
+                
+                
 
+
+                /*
                 ViewBag.Endend = new Endend()
                 {
                     Descricao = consulta.@return.end,
@@ -108,7 +124,10 @@ namespace EcommerceAngelo.Controllers
                     Bairro = consulta.@return.bairro,
                     Cidade = consulta.@return.cidade,
                     UF = consulta.@return.uf
-                };
+                };*/
+
+                TempData["Cliente"] =JsonConvert.SerializeObject(consulta);
+
 
                 return RedirectToAction(nameof(Cadastrar));
             }
@@ -118,6 +137,17 @@ namespace EcommerceAngelo.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult BuscarCliente(string cpf)
+        {
+            var cliente = _clienteDAO.BuscarClientePorCpf(cpf);
 
+            if (cliente != null)
+            {
+                return View();
+            }
+
+            return null;
+        }
     }
 }

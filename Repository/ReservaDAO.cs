@@ -44,6 +44,11 @@ namespace Repository
         }
 
 
+        public List<Reserva> ListarTodos()
+        {
+            return _context.Reservas.ToList();
+        }
+
 
         public void Remover(int id)
         {

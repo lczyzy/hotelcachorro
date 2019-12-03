@@ -68,6 +68,7 @@
 
 <h2>CepTeste</h2>
 
+
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <div class="form-group">
@@ -89,23 +90,50 @@
     </div>
 }
 
-    <div class="form-group" id="Rua">
-        <label asp-for="Endend.Descricao"></label>
-        <input type="text" class="form-control"
-               asp-for="Endend.Descricao" readonly="" />
-        <span asp-validation-for="Endend.Descricao"
-              class="text-primary"></span>
-    </div>
+<div class="form-group" id="Rua">
+    <label asp-for="Endend.Descricao"></label>
+    <input type="text" class="form-control"
+           asp-for="Endend.Descricao" readonly="" />
+    <span asp-validation-for="Endend.Descricao"
+          class="text-primary"></span>
+</div>
+
+<div class="form-group" id="Bairro">
+    <label asp-for="Endend.Bairro"></label>
+    <input type="text" class="form-control"
+           asp-for="Endend.Bairro" readonly="" />
+    <span asp-validation-for="Endend.Bairro"
+          class="text-primary"></span>
+</div>
+
+<div class="form-group" id="Cidade">
+    <label asp-for="Endend.Cidade"></label>
+    <input type="text" class="form-control"
+           asp-for="Endend.Cidade" readonly="" />
+    <span asp-validation-for="Endend.Cidade"
+          class="text-primary"></span>
+</div>
+
+<div class="form-group" id="Estado">
+    <label asp-for="Endend.UF"></label>
+    <input type="text" class="form-control"
+           asp-for="Endend.UF" readonly="" />
+    <span asp-validation-for="Endend.UF"
+          class="text-primary"></span>
+</div>
+
+
 
 
 @{
-    if (ViewBag.Endereco != null)
+    if (ViewBag.Endend != null)
     {
-        @ViewBag.Endereco.Descricao @ViewBag.Endereco.Complemento
+        @ViewBag.Endend.Descricao
+
         <br />
-        @ViewBag.Endereco.Bairro<br />
-        @ViewBag.Endereco.Cidade<br />
-        @ViewBag.Endereco.UF<br />
+        @ViewBag.Endend.Bairro<br />
+        @ViewBag.Endend.Cidade<br />
+        @ViewBag.Endend.UF<br />
     }
 }
 

@@ -35,6 +35,8 @@ namespace EcommerceAngelo.Controllers
                 s.Categoria =
                      _categoriaDAO.BuscarPorId(drpCategorias);
 
+
+
                 if (_servicoDAO.Cadastrar(s))
                 {
                     return RedirectToAction("Index");

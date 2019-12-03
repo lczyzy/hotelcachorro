@@ -42,6 +42,8 @@ namespace EcommerceAngelo.Controllers
             return RedirectToAction(nameof(Cadastrar));
         }
 
+        
+
         [HttpPost]
         public IActionResult Cadastrar(Usuario u)
         {

@@ -12,24 +12,35 @@ namespace EcommerceAngelo.Controllers
 {
     public class ReservaController : Controller
     {
-
+        
+        private readonly PetDAO _petDAO;
         private readonly ReservaDAO _reservaDAO;
         private readonly QuartoDAO _quartoDAO;
+        private readonly ServicoDAO _servicoDAO;
        
         public ReservaController(ReservaDAO reservaDAO,
-            QuartoDAO quartoDAO)
+            QuartoDAO quartoDAO, PetDAO petDAO, ServicoDAO servicoDAO)
         {
             _reservaDAO = reservaDAO;
-            _quartoDAO = quartoDAO;  
+            _quartoDAO = quartoDAO;
+            _petDAO = petDAO;
+            _servicoDAO = servicoDAO;
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Reserva r,
-            int drpQuartos)
+            int drpQuartos, int drpServicos)
         {
             ViewBag.Quartos =
                 new SelectList(_quartoDAO.ListarTodos(),
                 "IdQuarto", "NomeQuarto");
+
+            ViewBag.Servicos =
+                new SelectList(_servicoDAO.ListarTodos(),
+                "IdServico", "NomeServico");
+
+
+
 
             if (ModelState.IsValid)
             {
@@ -37,6 +48,8 @@ namespace EcommerceAngelo.Controllers
 
                 r.Quarto =
                     _quartoDAO.BuscarPorId(drpQuartos);
+
+               
 
                 if (_reservaDAO.Cadastrar(r))
                 {
@@ -60,6 +73,11 @@ namespace EcommerceAngelo.Controllers
             ViewBag.Quartos =
                 new SelectList(_quartoDAO.ListarTodos(),
                 "IdQuarto", "NomeQuarto");
+
+            ViewBag.Servicos =
+                new SelectList(_servicoDAO.ListarTodos(),
+                "IdServico", "NomeServico");
+
             return View();
         }
 
@@ -73,7 +91,7 @@ namespace EcommerceAngelo.Controllers
         public IActionResult Alterar(int id)
         {
             return View
-                (_reservaDAO.BuscarPorId(id));
+                (_reservaDAO.BuscarReservaPorId(id));
         }
 
         [HttpPost]

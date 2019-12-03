@@ -1,0 +1,102 @@
+﻿@model HotelCachorro.Model.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group" id="Cliente">
+                <label asp-for="Pet.cliente.Cpf"></label>
+                <input type="text" class="form-control"
+                       asp-for="Pet.cliente.Cpf" />
+                <span asp-validation-for="Pet.cliente.Cpf"
+                      class="text-primary"></span>
+
+                <input type="submit"
+                       class="btn btn-info"
+                       value="Buscar Cliente"
+                       asp-action="BuscarCliente"
+                       asp-controller="Cliente" />
+
+            </div>
+
+            <div class="form-group" id="Pets">
+                <label>Pets</label>
+                <select asp-items="@ViewBag.Pets"
+                        class="form-control"
+                        name="drpPets">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+
+            <div class="form-group" id="Quartos">
+                <label>Quartos</label>
+                <select asp-items="@ViewBag.Quartos"
+                        class="form-control"
+                        name="drpQuartos">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+
+            <div class="form-group" id="Servicos">
+                <label>Servicos</label>
+                <select asp-items="@ViewBag.Servicos"
+                        class="form-control"
+                        name="drpServicos">
+                    <option> -- SELECIONE -- </option>
+                </select>
+
+            </div>
+
+            <input type="submit"
+                   class="btn btn-info"
+                   value="Adicionar Serviço"
+                   asp-action="AddServico"
+                   asp-controller="Cliente" />
+
+            <input type="submit"
+                   class="btn btn-info"
+                   value="Remover Serviço"
+                   asp-action="AddServico"
+                   asp-controller="Cliente" />
+
+
+
+            <div class="form-group">
+                <label asp-for="DataEntrada" class="control-label"></label>
+                <input asp-for="DataEntrada" class="form-control" />
+                <span asp-validation-for="DataEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataSaida" class="control-label"></label>
+                <input asp-for="DataSaida" class="form-control" />
+                <span asp-validation-for="DataSaida" class="text-danger"></span>
+            </div>
+
+            @*
+        <div class="form-group">
+            <label asp-for="ValorTotal" class="control-label"></label>
+            <input asp-for="ValorTotal" class="form-control" />
+            <span asp-validation-for="ValorTotal" class="text-danger"></span>
+        </div>
+            *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

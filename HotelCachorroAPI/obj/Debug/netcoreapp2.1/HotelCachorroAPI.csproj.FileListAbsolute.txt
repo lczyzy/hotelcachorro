@@ -12,3 +12,17 @@ C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcorea
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.pdb
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.dll
 C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.pdb
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.deps.json
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.runtimeconfig.json
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.runtimeconfig.dev.json
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.dll
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\bin\Debug\netcoreapp2.1\HotelCachorroAPI.pdb
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.csprojAssemblyReference.cache
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorAssemblyInfo.cache
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorAssemblyInfo.cs
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.AssemblyInfoInputs.cache
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.AssemblyInfo.cs
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.dll
+C:\Users\Aluno\Documents\myhhh\hotelcachorro\HotelCachorroAPI\obj\Debug\netcoreapp2.1\HotelCachorroAPI.pdb
