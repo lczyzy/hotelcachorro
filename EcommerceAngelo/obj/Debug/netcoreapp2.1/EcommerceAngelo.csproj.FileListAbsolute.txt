@@ -282,3 +282,8 @@ C:\Users\Aluno\Documents\myhhh\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreap
 C:\Users\Aluno\Documents\myhhh\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\EcommerceAngelo.Views.pdb
 C:\Users\Aluno\Documents\myhhh\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\EcommerceAngelo.csproj.CopyComplete
 C:\Users\Aluno\Documents\myhhh\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Cadastrar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Cadastrar.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Delete.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Details.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Edit.g.cshtml.cs
+C:\Users\lcz-x\Desktop\auaudog\hotelcachorro\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Index.g.cshtml.cs

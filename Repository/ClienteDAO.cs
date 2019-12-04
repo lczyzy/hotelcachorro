@@ -61,5 +61,10 @@ namespace Repository
             return _context.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf));
         }
 
+        public Cliente BuscarClientePorCPF(Cliente c)
+        {
+            return _context.Clientes.FirstOrDefault(x => x.Cpf.Equals(c.Cpf));
+        }
+
     }
 }

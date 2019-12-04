@@ -130,25 +130,5 @@ namespace EcommerceAngelo.Controllers
         }
 
 
-
-        /*
-        // GET: Pets/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var pet = await _context.Pets
-                .FirstOrDefaultAsync(m => m.IdPet == id);
-            if (pet == null)
-            {
-                return NotFound();
-            }
-
-            return View(pet);
-        }*/
-
     }
 }

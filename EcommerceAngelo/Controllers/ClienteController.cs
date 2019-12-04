@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -28,22 +29,32 @@ namespace EcommerceAngelo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Cliente c,
-            int drpGeneros, IFormFile fupImagem)
+        public IActionResult Cadastrar(int drpGeneros)
         {
             ViewBag.Generos =
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
 
-            
-            
+            Cliente c = new Cliente();
+            if (TempData["Cliente"] != null)
+            {
+                string resultado = TempData["Cliente"].ToString();
+                
+                //Console.WriteLine(resultado);
+                c.Endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
+            }
+
 
             if (ModelState.IsValid)
             {
-                
+              
 
                 c.Genero =
                     _generoDAO.BuscarPorId(drpGeneros);
+
+                
+
+
 
                 if (_clienteDAO.Cadastrar(c))
                 {
@@ -60,6 +71,8 @@ namespace EcommerceAngelo.Controllers
             ViewBag.DataHora = DateTime.Now;
             return View(_clienteDAO.ListarTodos());
         }
+
+
         [HttpGet]
         public IActionResult Cadastrar()
         {
@@ -68,17 +81,35 @@ namespace EcommerceAngelo.Controllers
                 "GeneroId", "Nome");
 
 
-            Cliente c = new Cliente();
-            if (TempData["Usuario"] != null)
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult BuscarCep(Cliente c)
+        {
+
+            var correios = new ServiceReference1.AtendeClienteClient();
+           
+
+            var consulta = correios.consultaCEPAsync(c.Endereco.Cep).Result;
+
+
+
+            if (consulta != null)
             {
-                string resultado = TempData["Cliente"].ToString();
-                c.Endend = JsonConvert.DeserializeObject<Endend>(resultado);
+                TempData["Cliente"] = JsonConvert.SerializeObject(consulta);
+ 
+
+                return RedirectToAction(nameof(Cadastrar));
             }
 
-
-
+            ModelState.AddModelError
+                    ("", "BuscarCep inválido!");
             return View(c);
         }
+
+
 
 
         public IActionResult Remover(int id)
@@ -100,42 +131,7 @@ namespace EcommerceAngelo.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult BuscarCep(Cliente c)
-        {
-           
-            var correios = new ServiceReference1.AtendeClienteClient();
-
-            var consulta = correios.consultaCEPAsync(c.Endend.Codigo).Result;
-
-            if (consulta != null)
-            {
-
-                //WebClient client = new WebClient();
-                
-                
-
-
-                /*
-                ViewBag.Endend = new Endend()
-                {
-                    Descricao = consulta.@return.end,
-                    Complemento = consulta.@return.complemento2,
-                    Bairro = consulta.@return.bairro,
-                    Cidade = consulta.@return.cidade,
-                    UF = consulta.@return.uf
-                };*/
-
-                TempData["Cliente"] =JsonConvert.SerializeObject(consulta);
-
-
-                return RedirectToAction(nameof(Cadastrar));
-            }
-
-            ModelState.AddModelError
-                    ("", "BuscarCep inválido!");
-            return View();
-        }
+       
 
         [HttpPost]
         public IActionResult BuscarCliente(string cpf)

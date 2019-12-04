@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelCachorro.Model;
 using Repository;
+using Domain;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -17,19 +18,21 @@ namespace EcommerceAngelo.Controllers
         private readonly ReservaDAO _reservaDAO;
         private readonly QuartoDAO _quartoDAO;
         private readonly ServicoDAO _servicoDAO;
+        private readonly ClienteDAO _clienteDAO;
        
         public ReservaController(ReservaDAO reservaDAO,
-            QuartoDAO quartoDAO, PetDAO petDAO, ServicoDAO servicoDAO)
+            QuartoDAO quartoDAO, PetDAO petDAO, ServicoDAO servicoDAO, ClienteDAO clienteDAO)
         {
             _reservaDAO = reservaDAO;
             _quartoDAO = quartoDAO;
             _petDAO = petDAO;
             _servicoDAO = servicoDAO;
+            _clienteDAO = clienteDAO;
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Reserva r,
-            int drpQuartos, int drpServicos)
+            int drpQuartos, int drpServicos, int drpPets)
         {
             ViewBag.Quartos =
                 new SelectList(_quartoDAO.ListarTodos(),
@@ -39,12 +42,13 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_servicoDAO.ListarTodos(),
                 "IdServico", "NomeServico");
 
-
+           
 
 
             if (ModelState.IsValid)
             {
-                
+                ViewBag.Pets = new SelectList(_petDAO.ListarTodos(),
+               "IdPet", "Nome");
 
                 r.Quarto =
                     _quartoDAO.BuscarPorId(drpQuartos);
@@ -78,6 +82,9 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_servicoDAO.ListarTodos(),
                 "IdServico", "NomeServico");
 
+           
+
+
             return View();
         }
 
@@ -101,6 +108,27 @@ namespace EcommerceAngelo.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [HttpPost]
+        public IActionResult BuscarClientePorPet(Reserva r)
+        {
+            //Cliente c = new Cliente();
+            var c = _clienteDAO.BuscarClientePorCPF(r.Pet.cliente);
+
+
+            if (c != null)
+            {
+                ViewBag.Pets = new SelectList(_petDAO.ListarPetPorCliente(c.IdCliente),
+                "IdPet", "Nome");
+
+                return RedirectToAction(nameof(Cadastrar));
+
+            }
+
+
+
+            return RedirectToAction("Index");
+        }
 
     }
 }

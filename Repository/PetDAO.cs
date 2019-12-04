@@ -61,7 +61,10 @@ namespace Repository
             _context.SaveChanges();
         }
 
-        
+        public List<Pet> ListarPetPorCliente(int id)
+        {
+            return _context.Pets.Include(x=> x.cliente).Where(x => x.cliente.IdCliente == id).ToList();
+        }
 
 
     }

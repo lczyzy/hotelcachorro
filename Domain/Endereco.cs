@@ -9,7 +9,21 @@ namespace Domain
     [Table("Enderecos")]
     public class Endereco
     {
-        public Endereco() { CriadoEm = DateTime.Now; }
+
+        [Key]
+        public int EnderecoId { get; set; }
+
+        public string Bairro { get; set; }
+        public string Cep { get; set; }
+        public string Cidade { get; set; }
+        public string End { get; set; }
+        public string Uf { get; set; }
+
+
+
+
+
+        /*
         [Key]
         public int EnderecoId { get; set; }
         [Display(Name = "CEP:")]
@@ -23,5 +37,6 @@ namespace Domain
         [Display(Name = "Estado:")]
         public string Uf { get; set; }
         public DateTime CriadoEm { get; set; }
+        */
     }
 }

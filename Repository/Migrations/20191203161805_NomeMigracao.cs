@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Repository.Migrations
 {
-    public partial class CriarBanco : Migration
+    public partial class NomeMigracao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,10 +28,9 @@ namespace Repository.Migrations
                 {
                     Codigo = table.Column<string>(nullable: false),
                     Descricao = table.Column<string>(nullable: true),
-                    Complemento = table.Column<string>(nullable: true),
                     Bairro = table.Column<string>(nullable: true),
                     Cidade = table.Column<string>(nullable: true),
-                    UF = table.Column<string>(nullable: true)
+                    uf = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -44,12 +43,12 @@ namespace Repository.Migrations
                 {
                     EnderecoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Cep = table.Column<string>(nullable: true),
-                    Logradouro = table.Column<string>(nullable: true),
                     Bairro = table.Column<string>(nullable: true),
-                    Localidade = table.Column<string>(nullable: true),
-                    Uf = table.Column<string>(nullable: true),
-                    CriadoEm = table.Column<DateTime>(nullable: false)
+                    Codigo = table.Column<string>(nullable: true),
+                    Cidade = table.Column<string>(nullable: true),
+                    Complemento = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true),
+                    UF = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -165,16 +164,16 @@ namespace Repository.Migrations
                     IdCliente = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Sobrenome = table.Column<string>(nullable: true),
-                    EndendCodigo = table.Column<string>(nullable: true)
+                    EnderecoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clientes", x => x.IdCliente);
                     table.ForeignKey(
-                        name: "FK_Clientes_Endend_EndendCodigo",
-                        column: x => x.EndendCodigo,
-                        principalTable: "Endend",
-                        principalColumn: "Codigo",
+                        name: "FK_Clientes_Enderecos_EnderecoId",
+                        column: x => x.EnderecoId,
+                        principalTable: "Enderecos",
+                        principalColumn: "EnderecoId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Clientes_Generos_GeneroId",
@@ -277,9 +276,9 @@ namespace Repository.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clientes_EndendCodigo",
+                name: "IX_Clientes_EnderecoId",
                 table: "Clientes",
-                column: "EndendCodigo");
+                column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clientes_GeneroId",
@@ -335,6 +334,9 @@ namespace Repository.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Endend");
+
+            migrationBuilder.DropTable(
                 name: "ItensVendas");
 
             migrationBuilder.DropTable(
@@ -350,9 +352,6 @@ namespace Repository.Migrations
                 name: "Servicos");
 
             migrationBuilder.DropTable(
-                name: "Enderecos");
-
-            migrationBuilder.DropTable(
                 name: "Pet");
 
             migrationBuilder.DropTable(
@@ -365,7 +364,7 @@ namespace Repository.Migrations
                 name: "Clientes");
 
             migrationBuilder.DropTable(
-                name: "Endend");
+                name: "Enderecos");
 
             migrationBuilder.DropTable(
                 name: "Generos");

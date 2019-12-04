@@ -46,7 +46,7 @@ namespace Repository.Migrations
 
                     b.Property<DateTime?>("DataNascimento");
 
-                    b.Property<string>("EndendCodigo");
+                    b.Property<int?>("EnderecoId");
 
                     b.Property<int?>("GeneroId");
 
@@ -60,7 +60,7 @@ namespace Repository.Migrations
 
                     b.HasKey("IdCliente");
 
-                    b.HasIndex("EndendCodigo");
+                    b.HasIndex("EnderecoId");
 
                     b.HasIndex("GeneroId");
 
@@ -76,11 +76,9 @@ namespace Repository.Migrations
 
                     b.Property<string>("Cidade");
 
-                    b.Property<string>("Complemento");
-
                     b.Property<string>("Descricao");
 
-                    b.Property<string>("UF");
+                    b.Property<string>("uf");
 
                     b.HasKey("Codigo");
 
@@ -97,11 +95,9 @@ namespace Repository.Migrations
 
                     b.Property<string>("Cep");
 
-                    b.Property<DateTime>("CriadoEm");
+                    b.Property<string>("Cidade");
 
-                    b.Property<string>("Localidade");
-
-                    b.Property<string>("Logradouro");
+                    b.Property<string>("End");
 
                     b.Property<string>("Uf");
 
@@ -297,9 +293,9 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Domain.Cliente", b =>
                 {
-                    b.HasOne("Domain.Endend", "Endend")
+                    b.HasOne("Domain.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EndendCodigo");
+                        .HasForeignKey("EnderecoId");
 
                     b.HasOne("Domain.Genero", "Genero")
                         .WithMany()
