@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HotelCachorro.Model;
 using Repository;
 using Domain;
+using System.Dynamic;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -29,6 +30,7 @@ namespace EcommerceAngelo.Controllers
             _servicoDAO = servicoDAO;
             _clienteDAO = clienteDAO;
         }
+
 
         [HttpPost]
         public IActionResult Cadastrar(Reserva r,
@@ -67,6 +69,9 @@ namespace EcommerceAngelo.Controllers
 
         public IActionResult Index()
         {
+            
+
+
             ViewBag.DataHora = DateTime.Now;
             return View(_reservaDAO.ListarTodos());
         }

@@ -1,5 +1,6 @@
 ﻿@model HotelCachorro.Model.Reserva
 
+
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -28,7 +29,7 @@
                        asp-controller="Reserva" />
 
             </div>
-            
+
 
 
             <div class="form-group" id="Pets">
@@ -71,7 +72,34 @@
                    asp-action="AddServico"
                    asp-controller="Cliente" />
 
+            @*
+        <table class="table table-hover table-striped"
+           style="margin-top:15px;margin-bottom:15px">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
 
+        <tbody>
+            @foreach (Servico item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Descricao</td>
+                    <td>@item.Preco.Value.ToString("C2")</td>
+                    <td>@item.Quantidade</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+            *@
 
             <div class="form-group">
                 <label asp-for="DataEntrada" class="control-label"></label>
