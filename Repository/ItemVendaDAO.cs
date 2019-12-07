@@ -10,6 +10,7 @@ namespace Repository
     public class ItemVendaDAO
     {
         private readonly Context _context;
+
         public ItemVendaDAO(Context context)
         {
             _context = context;
@@ -19,12 +20,11 @@ namespace Repository
             return _context.ItensVenda.Find(id);
         }
 
-        /*
+
         public bool Cadastrar(ItemVenda i)
         {
             ItemVenda itemAux = _context.ItensVenda.
-                FirstOrDefault(x => x.Produto.ProdutoId == i.Produto.ProdutoId &&
-                x.CarrinhoId.Equals(i.CarrinhoId));
+                FirstOrDefault(x => x.Servico.IdServico == i.Servico.IdServico);
             if (itemAux == null)
             {
                 _context.ItensVenda.Add(i);
@@ -35,7 +35,9 @@ namespace Repository
             }
             _context.SaveChanges();
             return true;
-        }*/
+        }
+
+        
         public List<ItemVenda> ListarTodos()
         {
             return _context.ItensVenda.ToList();

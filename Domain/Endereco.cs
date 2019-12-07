@@ -13,6 +13,7 @@ namespace Domain
         [Key]
         public int EnderecoId { get; set; }
 
+        
         public string Bairro { get; set; }
         public string Cep { get; set; }
         public string Cidade { get; set; }

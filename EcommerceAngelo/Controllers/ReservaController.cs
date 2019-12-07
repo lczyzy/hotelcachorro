@@ -20,19 +20,50 @@ namespace EcommerceAngelo.Controllers
         private readonly QuartoDAO _quartoDAO;
         private readonly ServicoDAO _servicoDAO;
         private readonly ClienteDAO _clienteDAO;
-       
+        private readonly ItemVendaDAO _itemVendaDAO;
+
         public ReservaController(ReservaDAO reservaDAO,
-            QuartoDAO quartoDAO, PetDAO petDAO, ServicoDAO servicoDAO, ClienteDAO clienteDAO)
+            QuartoDAO quartoDAO, PetDAO petDAO, ServicoDAO servicoDAO, ClienteDAO clienteDAO, ItemVendaDAO itemVendaDAO)
         {
             _reservaDAO = reservaDAO;
             _quartoDAO = quartoDAO;
             _petDAO = petDAO;
             _servicoDAO = servicoDAO;
             _clienteDAO = clienteDAO;
+            _itemVendaDAO = itemVendaDAO;
         }
 
 
-        [HttpPost]
+        public IActionResult AddServico(int id, int drpServicos)
+        {
+
+            ViewBag.Servicos = new SelectList
+                (_servicoDAO.ListarTodos(), "IdServico",
+                "NomeServico");
+
+
+            Servico s = new Servico();
+
+            s = _servicoDAO.BuscarPorId(drpServicos);
+
+
+
+            //Adicionar os produtos dentro do carrinho
+            //Servico s = _servicoDAO.BuscarPorId(id);
+            ItemVenda i = new ItemVenda
+            {
+                Servico = s,
+                Quantidade = 1,
+                Preco = s.PrecoServico
+            };
+            //Gravar o objeto na tabela
+            _itemVendaDAO.Cadastrar(i);
+            return RedirectToAction("Cadastrar");
+        }
+
+
+
+        
         public IActionResult Cadastrar(Reserva r,
             int drpQuartos, int drpServicos, int drpPets)
         {
@@ -40,11 +71,13 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_quartoDAO.ListarTodos(),
                 "IdQuarto", "NomeQuarto");
 
+
+            /*
             ViewBag.Servicos =
                 new SelectList(_servicoDAO.ListarTodos(),
                 "IdServico", "NomeServico");
+            */
 
-           
 
 
             if (ModelState.IsValid)

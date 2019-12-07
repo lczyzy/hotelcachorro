@@ -13,6 +13,9 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 using System.Xml.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace EcommerceAngelo.Controllers
 {
@@ -29,21 +32,11 @@ namespace EcommerceAngelo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(int drpGeneros)
+        public IActionResult Cadastrar(int drpGeneros, Cliente c)
         {
             ViewBag.Generos =
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
-
-            Cliente c = new Cliente();
-            if (TempData["Cliente"] != null)
-            {
-                string resultado = TempData["Cliente"].ToString();
-                
-                //Console.WriteLine(resultado);
-                c.Endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
-            }
-
 
             if (ModelState.IsValid)
             {
@@ -72,17 +65,27 @@ namespace EcommerceAngelo.Controllers
             return View(_clienteDAO.ListarTodos());
         }
 
-
-        [HttpGet]
         public IActionResult Cadastrar()
         {
+
             ViewBag.Generos =
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
 
+            Cliente c = new Cliente();
+            if (TempData["Cliente"] != null)
+            {
+                string resultado = TempData["Cliente"].ToString();
 
-            return View();
+                //Endereco endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
+
+                c.Endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
+         
+            }
+
+            return View(c);
         }
+
 
 
         [HttpPost]

@@ -11,18 +11,35 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Imagem</th>
-            <th>Criado em</th>
+            <th>Sobrenome</th>
+            <th>Gênero</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Telefone</th>
+            <th>Data nascimento</th>
+            <th>Endereco</th>
+            <th>CriadoEm</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
 
     <tbody>
-        
+        @foreach (Cliente item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Sobrenome</td>
+                <td>@item.Genero</td>
+                <td>@item.Cpf</td>
+                <td>@item.Rg</td>
+                <td>@item.Telefone</td>
+                <td>@item.DataNascimento</td>
+                <td>@item.Endereco</td>     
+                <td>@item.CriadoEm</td>
+            
+            </tr>
+        }
     </tbody>
 </table>
 <b>Dados atualizados em: </b> @dataHora

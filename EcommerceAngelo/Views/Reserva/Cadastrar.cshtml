@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Charts";
 }
 
 <h2>Create</h2>
@@ -62,14 +63,14 @@
 
             <input type="submit"
                    class="btn btn-info"
-                   value="Adicionar Serviço"
+                   value="Add Serviço"
                    asp-action="AddServico"
-                   asp-controller="Cliente" />
+                   asp-controller="Reserva"/>
 
             <input type="submit"
                    class="btn btn-info"
                    value="Remover Serviço"
-                   asp-action="AddServico"
+                   asp-action="DeleteServico"
                    asp-controller="Cliente" />
 
             @*
@@ -120,7 +121,9 @@
         </div>
             *@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" class="btn btn-success"
+                       value="Cadastrar" asp-action="Cadastrar"
+                       asp-controller="Reserva" />
             </div>
         </form>
     </div>

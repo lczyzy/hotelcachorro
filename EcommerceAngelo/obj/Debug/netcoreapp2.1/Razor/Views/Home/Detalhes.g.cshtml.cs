@@ -69,7 +69,7 @@ Write(Model.Nome);
             WriteLiteral("</h2>\r\n\r\n<table>\r\n    <tr>\r\n        <td>\r\n            ");
             EndContext();
             BeginContext(87, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "75e8b71758ea437eb306d16de697f459", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a26d2b5337c043cfab25f2ae75f6fe62", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -123,7 +123,7 @@ AddHtmlAttributeValue("", 203, Model.Descricao, 203, 16, false);
             WriteLiteral("<br />\r\n            ");
             EndContext();
             BeginContext(448, 207, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6bfc74c34e640abb4b1665c70b537da", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef8c9ce4b037459582a385a9bbbcda3e", async() => {
                 BeginContext(610, 41, true);
                 WriteLiteral("\r\n                Adicionar\r\n            ");
                 EndContext();
