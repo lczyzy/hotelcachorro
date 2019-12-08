@@ -1,0 +1,37 @@
+﻿@model Usuario
+
+<form method="post">
+    <fieldset>
+        <legend>Dados de Endereço</legend>
+       
+    </fieldset>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="form-group" id="E-mail">
+            <label asp-for="Email"></label>
+            <input type="text" class="form-control"
+                   asp-for="Email" />
+            <span asp-validation-for="Email"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Senha">
+            <label asp-for="Senha"></label>
+            <input type="text" class="form-control"
+                   asp-for="Senha" />
+            <span asp-validation-for="Senha"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="ConfirmacaoSenha">
+            <label asp-for="ConfirmacaoSenha"></label>
+            <input type="text" class="form-control"
+                   asp-for="ConfirmacaoSenha" />
+            <span asp-validation-for="ConfirmacaoSenha"
+                  class="text-primary"></span>
+        </div>
+        <input type="submit"
+               class="btn btn-success"
+               value="Cadastrar"
+               asp-action="Cadastrar"
+               asp-controller="Usuario" />
+    </fieldset>
+</form>
