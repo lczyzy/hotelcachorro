@@ -30,11 +30,10 @@ namespace API
             //Configurar a ID do banco - Context
             services.AddDbContext<Context>
                 (options => options.UseSqlServer
-                (Configuration.GetConnectionString
-                ("EcommerceConnection")));
-                  
+                (Configuration.GetConnectionString("EcommerceConnection")));
 
             //Configurar a ID dos DAOs
+            services.AddScoped<ServicoDAO>();
             services.AddScoped<CategoriaDAO>();
 
 

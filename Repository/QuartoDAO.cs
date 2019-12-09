@@ -107,5 +107,13 @@ namespace Repository
             return _context.Quartos.ToList();
         }
 
+        public List<Quarto> BuscarQuartoPorPreco(double preco)
+        {
+            return _context.Quartos.Where(x => x.PrecoQuarto >= preco).ToList();
+              
+        }
+
+        
+
     }
 }

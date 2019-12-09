@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191206142040_CriarBanco")]
-    partial class CriarBanco
+    [Migration("20191208145740_NomeMigracao")]
+    partial class NomeMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,8 @@ namespace Repository.Migrations
                     b.Property<DateTime>("CriadoEm");
 
                     b.Property<DateTime?>("DataNascimento");
+
+                    b.Property<string>("Deficiencia");
 
                     b.Property<int?>("EnderecoId");
 

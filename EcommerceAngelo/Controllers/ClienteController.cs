@@ -45,16 +45,20 @@ namespace EcommerceAngelo.Controllers
                 c.Genero =
                     _generoDAO.BuscarPorId(drpGeneros);
 
-                
 
-
-
-                if (_clienteDAO.Cadastrar(c))
+                if (_clienteDAO.ValidarCpf(c.Cpf))
                 {
-                    return RedirectToAction("Index");
+                    if (_clienteDAO.Cadastrar(c))
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    ModelState.AddModelError
+                        ("", "Esse cliente já existe!");
                 }
+
                 ModelState.AddModelError
-                    ("", "Esse cliente já existe!");
+                        ("", "Cpf inválido!");
+
             }
             return View(c);
         }
@@ -97,6 +101,7 @@ namespace EcommerceAngelo.Controllers
 
             var consulta = correios.consultaCEPAsync(c.Endereco.Cep).Result;
 
+            
 
 
             if (consulta != null)

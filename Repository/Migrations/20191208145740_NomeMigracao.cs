@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Repository.Migrations
 {
-    public partial class CriarBanco : Migration
+    public partial class NomeMigracao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -163,7 +163,8 @@ namespace Repository.Migrations
                     IdCliente = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Sobrenome = table.Column<string>(nullable: true),
-                    EnderecoId = table.Column<int>(nullable: true)
+                    EnderecoId = table.Column<int>(nullable: true),
+                    Deficiencia = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

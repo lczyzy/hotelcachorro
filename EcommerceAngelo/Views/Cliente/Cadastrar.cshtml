@@ -1,102 +1,70 @@
 ﻿@model Cliente
 
-<h2>Cadastrar cliente</h2>
+<h4>Cadastrar cliente</h4><br />
 
 
-<h2>Cep</h2>
 
 <form method="post">
-    <fieldset>
-        <legend>Dados de Endereço</legend>
-        <div asp-validation-summary="ModelOnly"
-             class="text-primary"></div>
-        <div class="form-group" id="Cep">
-            <label asp-for="Endereco.Cep"></label>
-            <input type="text" class="form-control"
-                   asp-for="Endereco.Cep" />
-            <span asp-validation-for="Endereco.Cep"
-                  class="text-primary"></span>
-        </div>
-        <input type="submit"
-               class="btn btn-info"
-               value="Buscar"
-               asp-action="BuscarCep"
-               asp-controller="Cliente" />
-
-
-        <div class="form-group" id="Rua">
-            <label asp-for="Endereco.End"></label>
-            <input type="text" class="form-control"
-                   asp-for="Endereco.End" readonly="" />
-            <span asp-validation-for="Endereco.End"
-                  class="text-primary"></span>
-        </div>
-        <div class="form-group" id="Bairro">
-            <label asp-for="Endereco.Bairro"></label>
-            <input type="text" class="form-control"
-                   asp-for="Endereco.Bairro" readonly="" />
-            <span asp-validation-for="Endereco.Bairro"
-                  class="text-primary"></span>
-        </div>
-        <div class="form-group" id="Cidade">
-            <label asp-for="Endereco.Cidade"></label>
-            <input type="text" class="form-control"
-                   asp-for="Endereco.Cidade" readonly="" />
-            <span asp-validation-for="Endereco.Cidade"
-                  class="text-primary"></span>
-        </div>
-        <div class="form-group" id="Estado">
-            <label asp-for="Endereco.Uf"></label>
-            <input type="text" class="form-control"
-                   asp-for="Endereco.Uf" readonly="" />
-            <span asp-validation-for="Endereco.Uf"
-                  class="text-primary"></span>
-        </div>
-    </fieldset>
 
     <fieldset>
         <legend>Dados Pessoais</legend>
-
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Sobrenome" class="control-label"></label>
-            <input asp-for="Sobrenome" class="form-control" />
-            <span asp-validation-for="Sobrenome" class="text-danger"></span>
-        </div>
-        <div class="form-group">
+        
+        <div class="form-group col-lg-3">
             <label asp-for="Nome" class="control-label"></label>
             <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="DataNascimento" class="control-label"></label>
-            <input asp-for="DataNascimento" class="form-control" />
-            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        
+        <div class="form-group col-lg-3">
+            <label asp-for="Sobrenome" class="control-label"></label>
+            <input asp-for="Sobrenome" class="form-control" />
+            <span asp-validation-for="Sobrenome" class="text-danger"></span>
         </div>
-        <div class="form-group">
+        
+        <div class="form-group col-lg-3">
+            <label asp-for="DataNascimento" class="control-label"></label>
+            <input type="date" asp-for="DataNascimento" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-primary"></span>
+        </div>
+
+
+
+        <div class="form-group col-lg-3">
             <label asp-for="Cpf" class="control-label"></label>
             <input asp-for="Cpf" class="form-control" />
             <span asp-validation-for="Cpf" class="text-danger"></span>
         </div>
-        <div class="form-group">
+        <div class="form-group col-lg-3">
             <label asp-for="Rg" class="control-label"></label>
             <input asp-for="Rg" class="form-control" />
             <span asp-validation-for="Rg" class="text-danger"></span>
         </div>
-        <div class="form-group">
+        <div class="form-group col-lg-3">
             <label asp-for="Telefone" class="control-label"></label>
             <input asp-for="Telefone" class="form-control" />
             <span asp-validation-for="Telefone" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="CriadoEm" class="control-label"></label>
-            <input asp-for="CriadoEm" class="form-control" />
-            <span asp-validation-for="CriadoEm" class="text-danger"></span>
+
+        <div id="check">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="1" id="check">
+                <label class="form-check-label">Telefone para contato</label>
+            </div>
+        </div>
+        <div id="divDef" class="form-group col-lg-3" style='visibility: hidden;'>
+            <input asp-for="TelefoneContato" class="form-control" placeholder="Telefone Contato" />
+            <span asp-validation-for="TelefoneContato" class="text-danger"></span>
         </div>
 
 
-        <div class="form-group" id="Generos">
-            <label>Gêneros</label>
+        <div class="form-group col-lg-3">
+            <label asp-for="CriadoEm" class="control-label"></label>
+            <input asp-for="CriadoEm" class="form-control" readonly="" />
+            <span asp-validation-for="CriadoEm" class="text-danger"></span>
+        </div>
+        <div class="form-group col-lg-3" id="Generos">
+            <label>Gênero</label>
             <select asp-items="@ViewBag.Generos"
                     class="form-control"
                     name="drpGeneros">
@@ -104,14 +72,97 @@
             </select>
         </div>
 
+
+    </fieldset>
+
+    <br /><br />
+    <div>
+        <fieldset>
+            <legend>Dados de Endereço</legend>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-primary"></div>
+            <div class="form-group col-lg-3" id="Cep">
+                <label asp-for="Endereco.Cep"></label>
+                <input type="text" class="form-control"
+                       asp-for="Endereco.Cep" />
+                <span asp-validation-for="Endereco.Cep"
+                      class="text-primary"></span>
+            </div>
+
+            <button type="button" id="btnCep" onclick="buscarCEP()" class="btn btn-primary ">Buscar</button>
+
+
+            <div class="form-group col-lg-3" id="Rua">
+                <label asp-for="Endereco.End"></label>
+                <input type="text" class="form-control"
+                       asp-for="Endereco.End" readonly="" />
+                <span asp-validation-for="Endereco.End"
+                      class="text-primary"></span>
+            </div>
+            <div class="form-group col-lg-3" id="Bairro">
+                <label asp-for="Endereco.Bairro"></label>
+                <input type="text" class="form-control"
+                       asp-for="Endereco.Bairro" readonly="" />
+                <span asp-validation-for="Endereco.Bairro"
+                      class="text-primary"></span>
+            </div>
+            <div class="form-group col-lg-3" id="Cidade">
+                <label asp-for="Endereco.Cidade"></label>
+                <input type="text" class="form-control"
+                       asp-for="Endereco.Cidade" readonly="" />
+                <span asp-validation-for="Endereco.Cidade"
+                      class="text-primary"></span>
+            </div>
+            <div class="form-group col-lg-3" id="Estado">
+                <label asp-for="Endereco.Uf"></label>
+                <input type="text" class="form-control"
+                       asp-for="Endereco.Uf" readonly="" />
+                <span asp-validation-for="Endereco.Uf"
+                      class="text-primary"></span>
+            </div>
+
+        </fieldset>
+
         <input type="submit"
                class="btn btn-success"
                value="Cadastrar"
                asp-action="Cadastrar"
                asp-controller="Cliente" />
+    </div>
+</form>
 
-    </fieldset>
-    </form>
+<script>
+
+    function buscarCEP() {
+        cep = document.getElementById('Endereco_Cep').value;
+        console.log(cep);
+        var url = "http://apps.widenet.com.br/busca-cep/api/cep/" + cep + ".json";//Sua URL
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+
+        dados = JSON.parse(xhttp.responseText);
+        console.log(dados);
+        document.getElementById('Endereco_End').value = dados.address;
+        document.getElementById('Endereco_Bairro').value = dados.district;
+        document.getElementById('Endereco_Cidade').value = dados.city;
+        document.getElementById('Endereco_Uf').value = dados.state;
+
+    }
+    document.getElementById("check").onclick = function () {
+        value = document.getElementById("check").value;
+        if (value == 2) {
+            document.getElementById("check").value = 1;
+            document.getElementById('divDef').style.visibility = 'hidden'
+        }
+        else {
+            document.getElementById("check").value = 2;
+            document.getElementById('divDef').style.visibility = 'visible'
+        }
+    }
+
+</script>
 
 
     <div>

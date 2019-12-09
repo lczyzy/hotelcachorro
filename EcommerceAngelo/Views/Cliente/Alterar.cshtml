@@ -1,16 +1,15 @@
 ﻿@model Domain.Cliente
-
 @{
     ViewData["Title"] = "Edit";
 }
-
 <h2>Edit</h2>
-
 <h4>Cliente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Alterar">
+
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdCliente" />
             <div class="form-group">
@@ -48,7 +47,6 @@
                 <input asp-for="CriadoEm" class="form-control" />
                 <span asp-validation-for="CriadoEm" class="text-danger"></span>
             </div>
-
             <div class="form-group" id="Generos">
                 <label>Gêneros</label>
                 <select asp-items="@ViewBag.Generos"
@@ -57,15 +55,108 @@
                     <option> -- SELECIONE -- </option>
                 </select>
             </div>
-
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
+
+            <div>
+                <fieldset>
+                    <legend>Dados de Endereço</legend>
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-primary"></div>
+                    <div class="form-group" id="Cep">
+                        <label asp-for="Endereco.Cep"></label>
+                        <input type="text" class="form-control"
+                               asp-for="Endereco.Cep" />
+                        <span asp-validation-for="Endereco.Cep"
+                              class="text-primary"></span>
+                    </div>
+                    <button type="button" id="btnCep" onclick="buscarCEP()" class="btn btn-primary">Buscar</button>
+
+                    <div class="form-group" id="Rua">
+                        <label asp-for="Endereco.End"></label>
+                        <input type="text" class="form-control"
+                               asp-for="Endereco.End" readonly="" />
+                        <span asp-validation-for="Endereco.End"
+                              class="text-primary"></span>
+                    </div>
+                    <div class="form-group" id="Bairro">
+                        <label asp-for="Endereco.Bairro"></label>
+                        <input type="text" class="form-control"
+                               asp-for="Endereco.Bairro" readonly="" />
+                        <span asp-validation-for="Endereco.Bairro"
+                              class="text-primary"></span>
+                    </div>
+                    <div class="form-group" id="Cidade">
+                        <label asp-for="Endereco.Cidade"></label>
+                        <input type="text" class="form-control"
+                               asp-for="Endereco.Cidade" readonly="" />
+                        <span asp-validation-for="Endereco.Cidade"
+                              class="text-primary"></span>
+                    </div>
+                    <div class="form-group" id="Estado">
+                        <label asp-for="Endereco.Uf"></label>
+                        <input type="text" class="form-control"
+                               asp-for="Endereco.Uf" readonly="" />
+                        <span asp-validation-for="Endereco.Uf"
+                              class="text-primary"></span>
+                    </div>
+                </fieldset>
+
+            </div>
         </form>
+
+        <div id="check">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="1" id="check">
+                <label class="form-check-label">Tu tem problema?</label>
+            </div>
+        </div>
+
+        <div id="divDef" style='visibility: hidden;'>
+            <label asp-for="TelefoneContato" class="control-label"></label>
+
+            <input asp-for="TelefoneContato" class="form-control" placeholder="Digite qual" />
+            <span asp-validation-for="TelefoneContato" class="text-danger"></span>
+        </div>
+
+
     </div>
 </div>
+<script>
+
+    function buscarCEP() {
+        cep = document.getElementById('Endereco_Cep').value;
+        console.log(cep);
+        var url = "http://apps.widenet.com.br/busca-cep/api/cep/" + cep + ".json";//Sua URL
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+
+        dados = JSON.parse(xhttp.responseText);
+        console.log(dados);
+        document.getElementById('Endereco_End').value = dados.address;
+        document.getElementById('Endereco_Bairro').value = dados.district;
+        document.getElementById('Endereco_Cidade').value = dados.city;
+        document.getElementById('Endereco_Uf').value = dados.state;
+
+    }
+
+    document.getElementById("check").onclick = function () {
+        value = document.getElementById("check").value;
+        if (value == 2) {
+            document.getElementById("check").value = 1;
+            document.getElementById('divDef').style.visibility = 'hidden'
+        }
+        else {
+            document.getElementById("check").value = 2;
+            document.getElementById('divDef').style.visibility = 'visible'
+        }
+    }
+
+</script>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-

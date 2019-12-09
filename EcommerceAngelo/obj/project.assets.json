@@ -12970,11 +12970,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\EcommerceAngelo\\EcommerceAngelo.csproj",
+      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\EcommerceAngelo\\EcommerceAngelo.csproj",
       "projectName": "EcommerceAngelo",
-      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\EcommerceAngelo\\EcommerceAngelo.csproj",
+      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\EcommerceAngelo\\EcommerceAngelo.csproj",
       "packagesPath": "C:\\Users\\lcz-x\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\EcommerceAngelo\\obj\\",
+      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\EcommerceAngelo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12993,11 +12993,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Domain\\Domain.csproj"
+            "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Repository\\Repository.csproj"
+            "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Repository\\Repository.csproj"
             }
           }
         }

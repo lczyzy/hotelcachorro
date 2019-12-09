@@ -19,14 +19,25 @@ namespace API.Controllers
             _categoriaDAO = categoriaDAO;
         }
 
-        //GET: /api/Produto/ListarTodos
+        //GET: /api/Categoria/ListarTodos
         [HttpGet]
         [Route("ListarTodos")]
         public IActionResult ListarTodos()
         {
-            return Ok(_categoriaDAO.ListarTodos());
+            return Ok("aaa");
+        }
+
+
+        [HttpGet]
+        [Route("teste")]
+        public IActionResult teste()
+        {
+            return Ok("aaa");
         }
 
 
     }
+
+
+
 }

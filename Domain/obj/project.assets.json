@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\lcz-x\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

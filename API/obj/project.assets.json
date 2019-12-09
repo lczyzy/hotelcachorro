@@ -12576,11 +12576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\API\\API.csproj",
+      "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\API\\API.csproj",
       "packagesPath": "C:\\Users\\lcz-x\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\API\\obj\\",
+      "outputPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12599,8 +12599,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auaudog\\hotelcachorro\\Repository\\Repository.csproj"
+            "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\lcz-x\\Desktop\\auauaudog\\hotelcachorro-new_07_02_web\\Repository\\Repository.csproj"
             }
           }
         }
