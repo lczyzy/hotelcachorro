@@ -8,8 +8,7 @@ namespace Domain
     public class Pessoa
     {
 
-        [Display(Name = "Nome:")]
-        [Required(ErrorMessage = "Campo obrigatório!")]
+        [Display(Name = "Nome:")]   
         [MinLength(3, ErrorMessage = "No mínimo 3 caracteres")]
         [MaxLength(100, ErrorMessage = "No máximo 100 caracteres")]
         public string Nome { get; set; }
@@ -17,17 +16,15 @@ namespace Domain
         
         public Genero Genero { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório!")]
         public DateTime? DataNascimento { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório!")]
+        
         public string Cpf { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório!")]
+        
         public string Rg { get; set; }
 
-        [Display(Name = "Descrição:")]
-        [Required(ErrorMessage = "Campo obrigatório!")]
+        [Display(Name = "Telefone:")]  
         [MinLength(6, ErrorMessage = "No mínimo 6 caracteres")]
         public string Telefone { get; set; }
 

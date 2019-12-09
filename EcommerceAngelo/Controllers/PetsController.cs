@@ -35,8 +35,9 @@ namespace EcommerceAngelo.Controllers
                 new SelectList(_generoDAO.ListarTodos(),
                 "GeneroId", "Nome");
 
-            
 
+            
+            
 
             if (ModelState.IsValid)
             {
@@ -62,10 +63,10 @@ namespace EcommerceAngelo.Controllers
                 p.Genero =
                     _generoDAO.BuscarPorId(drpGeneros);
 
+
                 p.cliente = _clienteDAO.BuscarClientePorCpf(p.cliente.Cpf);
 
-
-                if(p.cliente != null)
+                if (p.cliente != null)
                 {
                     if (_petDAO.Cadastrar(p))
                     {

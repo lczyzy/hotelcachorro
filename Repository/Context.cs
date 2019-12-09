@@ -25,5 +25,6 @@ namespace Repository
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Endend> Endends { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<TempList> ListTemp { get; set; }
     }
 }

@@ -52,6 +52,7 @@ namespace Repository
 
         public void Remover(int id)
         {
+            
             _context.Reservas.Remove(BuscarReservaPorId(id));
             _context.SaveChanges();
 

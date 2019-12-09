@@ -68,7 +68,7 @@ using Domain;
             WriteLiteral("\n<h2>Gerenciamento dos Clientes</h2>\n");
             EndContext();
             BeginContext(106, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd9fed314c224c5ab449144513d2c7a7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27e2fed73e9b4b9abaa15b2875b5f12e", async() => {
                 BeginContext(153, 17, true);
                 WriteLiteral("Cadastrar Cliente");
                 EndContext();
@@ -210,7 +210,7 @@ using Domain;
             WriteLiteral("</td>\n\n                <td>\n                    ");
             EndContext();
             BeginContext(1119, 182, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77e41470325d40de9519088e8b126583", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3ff3a68849740df9c0af6895ab285ec", async() => {
                 BeginContext(1244, 53, true);
                 WriteLiteral("\n                        Remover\n                    ");
                 EndContext();
@@ -246,7 +246,7 @@ using Domain;
             WriteLiteral("\n                </td>\n                <td>\n                    ");
             EndContext();
             BeginContext(1365, 181, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "833b111cbf964dbfbf0dfbbd29446057", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7800970b42d54b418f7ca2fde0969b04", async() => {
                 BeginContext(1489, 53, true);
                 WriteLiteral("\n                        Alterar\n                    ");
                 EndContext();

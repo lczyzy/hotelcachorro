@@ -13,6 +13,9 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+
+        
+
         <form asp-action="Cadastrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -104,12 +107,12 @@
 
             <div class="form-group">
                 <label asp-for="DataEntrada" class="control-label"></label>
-                <input asp-for="DataEntrada" class="form-control" />
+                <input type="date" asp-for="DataEntrada" class="form-control" />
                 <span asp-validation-for="DataEntrada" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataSaida" class="control-label"></label>
-                <input asp-for="DataSaida" class="form-control" />
+                <input type="date" asp-for="DataSaida" class="form-control" />
                 <span asp-validation-for="DataSaida" class="text-danger"></span>
             </div>
 

@@ -395,7 +395,6 @@ C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Index.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Quarto\Remover.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Cadastrar.g.cshtml.cs
-C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Delete.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Edit.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Index.g.cshtml.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Servico\Alterar.g.cshtml.cs
@@ -414,3 +413,4 @@ C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\EcommerceAngelo.csproj.CopyComplete
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\EcommerceAngelo.dll
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\EcommerceAngelo.pdb
+C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\EcommerceAngelo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Remover.g.cshtml.cs

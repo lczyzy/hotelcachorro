@@ -35,6 +35,8 @@ namespace API
             //Configurar a ID dos DAOs
             services.AddScoped<ServicoDAO>();
             services.AddScoped<CategoriaDAO>();
+            services.AddScoped<PetDAO>();
+            services.AddScoped<QuartoDAO>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

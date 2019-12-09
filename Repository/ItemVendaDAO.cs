@@ -1,4 +1,5 @@
 ﻿using Domain;
+using HotelCachorro.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,30 @@ namespace Repository
         {
             return _context.ItensVenda.Find(id);
         }
+
+
+        public bool Cadastrarxx(TempList tl)
+        {
+            ItemVenda itemAux = _context.ItensVenda.
+                FirstOrDefault(x => x.Servico.IdServico == tl.Servico.IdServico);
+            if (itemAux == null)
+            {
+                _context.ListTemp.Add(tl);
+            }
+            else
+            {
+                itemAux.Quantidade++;
+            }
+            _context.SaveChanges();
+            return true;
+        }
+
+        public List<TempList> ValoresTempList()
+        {
+            return _context.ListTemp.ToList();
+        }
+            
+
 
 
         public bool Cadastrar(ItemVenda i)
@@ -58,6 +83,29 @@ namespace Repository
                 Where(x => x.CarrinhoId.Equals(carrinhoId)).
                 Sum(x => x.Quantidade * x.Preco);
         }*/
+
+        public void RemoverTudoTemp()
+        {
+            _context.ListTemp.RemoveRange();
+        }
+
+
+        public bool RemoverVendaPorId(int reserva)
+        {
+
+            IEnumerable<ItemVenda> list = _context.ItensVenda.Where(c => c.Reserva.IdReserva == reserva).ToList();
+            _context.ItensVenda.RemoveRange(list);
+            _context.SaveChanges();
+            return true;
+
+        }
+
+        public void RemoverItensVenda(int id)
+        {
+            _context.ItensVenda.Remove(BuscarPorId(id));
+            _context.SaveChanges();
+        }
+
 
         public void Remover(int id)
         {
