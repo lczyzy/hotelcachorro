@@ -31,10 +31,10 @@ namespace API.Controllers
         }
 
 
-        //GET: /api/Pet/BuscarPetPorCategoria/1
+        //GET: /api/Pet/BuscarPorIdCliente/1
         [HttpGet]
-        [Route("BuscarPetPorCliente/{id}")]
-        public IActionResult BuscarPorCategoria([FromRoute] int id)
+        [Route("BuscarPorIdCliente/{id}")]
+        public IActionResult BuscarPorIdCliente([FromRoute] int id)
         {
             List<Pet> pets =
                 _petDAO.ListarPetPorCliente(id);

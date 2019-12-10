@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191209144321_ivvvv")]
-    partial class ivvvv
+    [Migration("20191209220924_NomeMigracao")]
+    partial class NomeMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,31 +44,25 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Cpf")
-                        .IsRequired();
+                    b.Property<string>("Cpf");
 
                     b.Property<DateTime>("CriadoEm");
 
-                    b.Property<DateTime?>("DataNascimento")
-                        .IsRequired();
+                    b.Property<DateTime?>("DataNascimento");
 
                     b.Property<int?>("EnderecoId");
 
                     b.Property<int?>("GeneroId");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("Rg")
-                        .IsRequired();
+                    b.Property<string>("Rg");
 
                     b.Property<string>("Sobrenome")
-                        .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<string>("Telefone")
-                        .IsRequired();
+                    b.Property<string>("Telefone");
 
                     b.Property<string>("TelefoneContato");
 
@@ -164,9 +158,7 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Castragem")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Castragem");
 
                     b.Property<int?>("GeneroId");
 
@@ -174,23 +166,15 @@ namespace Repository.Migrations
 
                     b.Property<string>("Imagem");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Nome");
 
-                    b.Property<string>("Pelagem")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Pelagem");
 
                     b.Property<double>("Peso");
 
-                    b.Property<string>("Porte")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Porte");
 
-                    b.Property<string>("Raca")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Raca");
 
                     b.Property<int?>("clienteIdCliente");
 

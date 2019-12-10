@@ -15,12 +15,15 @@ namespace API.Controllers
     {
 
         private readonly ServicoDAO _servicoDAO;
+        private readonly CategoriaDAO _categoriaDAO;
 
-        public ServicoAPIController(ServicoDAO servicoDAO)
+        public ServicoAPIController(ServicoDAO servicoDAO, CategoriaDAO categoriaDAO)
         {
             _servicoDAO = servicoDAO;
+            _categoriaDAO = categoriaDAO;
         }
 
+        // /api/Servico/ListarTodos
         [HttpGet]
         [Route("ListarTodos")]
         public IActionResult ListarTodos()
@@ -29,12 +32,16 @@ namespace API.Controllers
         }
 
 
+        // /api/Servico/Cadastrar
         [HttpPost]
         [Route("Cadastrar")]
         public IActionResult Cadastrar([FromBody]Servico s)
         {
+           
             if (ModelState.IsValid)
             {
+                //_categoriaDAO.BuscarPorId(s.Categoria.CategoriaId);
+
                 if (_servicoDAO.Cadastrar(s))
                 {
                     return Created("", s);

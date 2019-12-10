@@ -70,3 +70,12 @@ C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\Domain\obj\Debug\ne
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\Domain\obj\Debug\netcoreapp2.1\Domain.dll
 C:\Users\lcz-x\Desktop\auauaudog\hotelcachorro-new_07_02_web\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+C:\Users\Aluno\Documents\0912\hotelcachorro\Domain\obj\Debug\netcoreapp2.1\Domain.pdb

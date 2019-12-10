@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
@@ -24,15 +25,24 @@ namespace API.Controllers
         [Route("ListarTodos")]
         public IActionResult ListarTodos()
         {
-            return Ok("aaa");
+            return Ok(_categoriaDAO.ListarTodos());
         }
 
 
-        [HttpGet]
-        [Route("teste")]
-        public IActionResult teste()
+        // /api/Categoria/Cadastrar
+        [HttpPost]
+        [Route("Cadastrar")]
+        public IActionResult Cadastrar([FromBody]Categoria c)
         {
-            return Ok("aaa");
+            if (ModelState.IsValid)
+            {
+                if (_categoriaDAO.Cadastrar(c))
+                {
+                    return Created("", c);
+                }
+                return Conflict(new { msg = "Esse serviço já existe!" });
+            }
+            return BadRequest(ModelState);
         }
 
 

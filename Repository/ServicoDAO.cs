@@ -19,6 +19,9 @@ namespace Repository
 
         public bool Cadastrar(Servico s)
         {
+            
+
+
             if (BuscarServicoPorNome(s) == null)
             {
                 _context.Servicos.Add(s);
@@ -38,7 +41,7 @@ namespace Repository
         
         public List<Servico> ListarTodos()
         {
-            return _context.Servicos.ToList();
+            return _context.Servicos.Include(x => x.Categoria).ToList();
         }
 
         public Servico BuscarPorId(int id)

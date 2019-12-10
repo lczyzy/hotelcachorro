@@ -84,9 +84,12 @@ namespace Repository
                 Sum(x => x.Quantidade * x.Preco);
         }*/
 
-        public void RemoverTudoTemp()
+        public bool RemoverTudoTemporario()
         {
-            _context.ListTemp.RemoveRange();
+            IEnumerable<TempList> list = _context.ListTemp.Where(c => c.TempId > 1).ToList();
+            _context.ListTemp.RemoveRange(list);
+            _context.SaveChanges();
+            return true;
         }
 
 

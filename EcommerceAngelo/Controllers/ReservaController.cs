@@ -101,6 +101,7 @@ namespace EcommerceAngelo.Controllers
 
 
             
+            
             ViewBag.Servicos =
                 new SelectList(_servicoDAO.ListarTodos(),
                 "IdServico", "NomeServico");
@@ -177,7 +178,10 @@ namespace EcommerceAngelo.Controllers
                 r.ItensVendidos = itensVendaLista;
                 r.ValorTotal = total;
 
-           
+
+                //remover todos lista temporaria
+                _itemVendaDAO.RemoverTudoTemporario();
+   
 
                 if (_reservaDAO.Cadastrar(r))
                 {

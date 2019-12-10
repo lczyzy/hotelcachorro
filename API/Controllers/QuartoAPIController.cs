@@ -9,7 +9,7 @@ using Repository;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Quarto")]
     [ApiController]
     public class QuartoAPIController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace API.Controllers
             _quartoDAO = quartoDAO;
         }
 
-        //GET: /api/Pet/BuscarPetPorCategoria/1
+        //GET: /api/Quarto/BuscarQuartoPorPreco/1
         [HttpGet]
         [Route("BuscarQuartoPorPreco/{preco}")]
         public IActionResult BuscarQuartoPorPreco([FromRoute] double preco)

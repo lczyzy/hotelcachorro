@@ -14,7 +14,7 @@ namespace Repository.Migrations
                 {
                     CategoriaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
                     CriadoEm = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -73,8 +73,9 @@ namespace Repository.Migrations
                 {
                     IdQuarto = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NomeQuarto = table.Column<string>(nullable: true),
-                    PrecoQuarto = table.Column<double>(nullable: false)
+                    NomeQuarto = table.Column<string>(maxLength: 100, nullable: false),
+                    PrecoQuarto = table.Column<double>(nullable: false),
+                    InfoAdicional = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -112,7 +113,7 @@ namespace Repository.Migrations
                 {
                     IdServico = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NomeServico = table.Column<string>(nullable: true),
+                    NomeServico = table.Column<string>(maxLength: 100, nullable: false),
                     PrecoServico = table.Column<double>(nullable: false),
                     CategoriaId = table.Column<int>(nullable: true)
                 },
@@ -153,7 +154,7 @@ namespace Repository.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    Nome = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(maxLength: 100, nullable: true),
                     GeneroId = table.Column<int>(nullable: true),
                     DataNascimento = table.Column<DateTime>(nullable: true),
                     Cpf = table.Column<string>(nullable: true),
@@ -162,9 +163,9 @@ namespace Repository.Migrations
                     CriadoEm = table.Column<DateTime>(nullable: false),
                     IdCliente = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Sobrenome = table.Column<string>(nullable: true),
+                    Sobrenome = table.Column<string>(maxLength: 100, nullable: true),
                     EnderecoId = table.Column<int>(nullable: true),
-                    Deficiencia = table.Column<string>(nullable: true)
+                    TelefoneContato = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -184,21 +185,43 @@ namespace Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TemList",
+                columns: table => new
+                {
+                    TempId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ServicoIdServico = table.Column<int>(nullable: true),
+                    Nome = table.Column<string>(nullable: true),
+                    Preco = table.Column<double>(nullable: false),
+                    Quantidade = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TemList", x => x.TempId);
+                    table.ForeignKey(
+                        name: "FK_TemList_Servicos_ServicoIdServico",
+                        column: x => x.ServicoIdServico,
+                        principalTable: "Servicos",
+                        principalColumn: "IdServico",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pet",
                 columns: table => new
                 {
                     IdPet = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
                     clienteIdCliente = table.Column<int>(nullable: true),
                     GeneroId = table.Column<int>(nullable: true),
+                    Imagem = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true),
                     Raca = table.Column<string>(nullable: true),
                     Castragem = table.Column<string>(nullable: true),
                     Pelagem = table.Column<string>(nullable: true),
                     Idade = table.Column<int>(nullable: false),
                     Porte = table.Column<string>(nullable: true),
-                    Peso = table.Column<double>(nullable: false),
-                    Imagem = table.Column<string>(nullable: true)
+                    Peso = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -326,6 +349,11 @@ namespace Repository.Migrations
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TemList_ServicoIdServico",
+                table: "TemList",
+                column: "ServicoIdServico");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_EnderecoId",
                 table: "Usuarios",
                 column: "EnderecoId");
@@ -341,6 +369,9 @@ namespace Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "TemList");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

@@ -44,7 +44,8 @@ namespace Repository
         }
         public List<Pet> ListarTodos()
         {
-            return _context.Pets.ToList();
+            return _context.Pets.Include(x=>x.cliente).Include(x=> x.cliente.Endereco)
+                .Include(x=>x.cliente.Genero).Include(x=>x.Genero).ToList();
         }
         public Pet BuscarPorId(int id)
         {
@@ -63,7 +64,9 @@ namespace Repository
 
         public List<Pet> ListarPetPorCliente(int id)
         {
-            return _context.Pets.Include(x=> x.cliente).Where(x => x.cliente.IdCliente == id).ToList();
+            return _context.Pets.Include(x=> x.cliente).Include(x=>x.Genero).Include(x=>x.cliente.Endereco).
+                Include(x=> x.cliente.Genero)
+                .Where(x => x.cliente.IdCliente == id).ToList();
         }
 
 
